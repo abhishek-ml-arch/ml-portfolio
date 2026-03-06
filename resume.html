@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Abhishek Singh | ML Developer</title>
+
+<style>
+
+body{
+margin:0;
+font-family:system-ui;
+background:#020617;
+color:white;
+overflow-x:hidden;
+}
+
+/* canvas */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-2;
+}
+
+/* floating shapes */
+
+.shape{
+position:fixed;
+width:30px;
+height:30px;
+border-radius:8px;
+background:linear-gradient(135deg,#6366f1,#38bdf8);
+opacity:.5;
+z-index:-1;
+animation:float 8s infinite ease-in-out;
+}
+
+@keyframes float{
+0%{transform:translateY(0) rotate(0)}
+50%{transform:translateY(-25px) rotate(20deg)}
+100%{transform:translateY(0) rotate(0)}
+}
+
+/* wrapper */
+
+.wrapper{
+max-width:1100px;
+margin:auto;
+padding:120px 30px;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+margin-bottom:120px;
+position:relative;
+}
+
+.hero-card{
+display:inline-block;
+padding:80px 120px;
+border-radius:20px;
+background:rgba(15,23,42,.7);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(12px);
+transition:.3s;
+transform-style:preserve-3d;
+}
+
+/* NAME */
+
+.hero h1{
+font-size:78px;
+font-weight:800;
+letter-spacing:-2px;
+background:linear-gradient(90deg,#38bdf8,#6366f1,#8b5cf6,#38bdf8);
+background-size:300%;
+-webkit-background-clip:text;
+color:transparent;
+animation:gradientMove 6s infinite linear;
+}
+
+@keyframes gradientMove{
+0%{background-position:0%}
+100%{background-position:300%}
+}
+
+.tagline{
+margin-top:12px;
+font-size:20px;
+color:#94a3b8;
+}
+
+.buttons{
+margin-top:20px;
+}
+
+.buttons a{
+display:inline-block;
+margin:6px;
+padding:10px 20px;
+background:#1e293b;
+border-radius:8px;
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+.buttons a:hover{
+background:#6366f1;
+}
+
+/* floating cubes */
+
+.cube{
+position:absolute;
+width:40px;
+height:40px;
+background:linear-gradient(135deg,#6366f1,#38bdf8);
+border-radius:10px;
+opacity:.7;
+animation:float 6s infinite ease-in-out;
+}
+
+.cube1{top:40px;left:20%}
+.cube2{top:120px;right:20%;animation-delay:2s}
+.cube3{bottom:40px;left:35%;animation-delay:4s}
+
+/* sections */
+
+.section{
+margin-bottom:120px;
+transform-style:preserve-3d;
+}
+
+.section h2{
+font-size:32px;
+margin-bottom:20px;
+}
+
+/* cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(15,23,42,.7);
+padding:25px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(10px);
+transform-style:preserve-3d;
+transition:.25s;
+}
+
+/* skills */
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+}
+
+.skill{
+background:#1e293b;
+padding:10px 16px;
+border-radius:10px;
+transition:.25s;
+transform-style:preserve-3d;
+}
+
+.skill:hover{
+background:#6366f1;
+transform:translateZ(10px);
+}
+
+/* list */
+
+ul{
+color:#cbd5f5;
+line-height:1.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<div class="shape" style="top:10%;left:10%"></div>
+<div class="shape" style="top:40%;left:85%"></div>
+<div class="shape" style="top:70%;left:20%"></div>
+<div class="shape" style="top:80%;left:70%"></div>
+
+<div class="wrapper">
+
+<!-- HERO -->
+
+<div class="hero">
+
+<div class="hero-card" id="heroCard">
+
+<h1>Abhishek Singh</h1>
+
+<div class="tagline">
+Machine Learning Developer • Python • Data Science
+</div>
+
+<div class="buttons">
+<a href="https://github.com/abhishek-ml-arch">GitHub</a>
+<a href="https://www.linkedin.com/in/abhishek-singh-7875b83b2">LinkedIn</a>
+</div>
+
+</div>
+
+<div class="cube cube1"></div>
+<div class="cube cube2"></div>
+<div class="cube cube3"></div>
+
+</div>
+
+<!-- ABOUT -->
+
+<div class="section">
+
+<h2>About Me</h2>
+
+<div class="card">
+
+<p>
+I am a self-taught Machine Learning developer focused on building
+real-world AI systems using Python and modern data science tools.
+
+My journey began with learning Python programming and gradually
+expanded into data analysis, machine learning algorithms and
+building intelligent systems that solve practical problems.
+
+I enjoy exploring datasets, discovering patterns, and building
+predictive models that can support real decision making.
+</p>
+
+</div>
+
+</div>
+
+<!-- PROJECTS -->
+
+<div class="section">
+
+<h2>Projects</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Nike Sales Data Analysis</h3>
+<p>Exploratory data analysis using Python, Pandas and Matplotlib to analyze product sales trends and customer behavior.</p>
+</div>
+
+<div class="card">
+<h3>Spam Detection Model</h3>
+<p>NLP classification system built using Scikit-learn to identify spam SMS messages with text preprocessing and feature engineering.</p>
+</div>
+
+<div class="card">
+<h3>Customer Churn Prediction</h3>
+<p>Machine learning model predicting customers likely to leave a service using real world structured data.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- LEARNING JOURNEY -->
+
+<div class="section">
+
+<h2>Learning Journey</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Python Programming</h3>
+<p>Core programming concepts, loops, functions, data structures and problem solving.</p>
+</div>
+
+<div class="card">
+<h3>Data Analysis</h3>
+<p>Working with Pandas, NumPy and visualization tools to analyze datasets.</p>
+</div>
+
+<div class="card">
+<h3>Machine Learning</h3>
+<p>Learning regression, classification algorithms and model evaluation.</p>
+</div>
+
+<div class="card">
+<h3>AI Systems</h3>
+<p>Exploring advanced ML workflows and real-world AI applications.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- SKILLS -->
+
+<div class="section">
+
+<h2>Skills</h2>
+
+<div class="skills">
+
+<div class="skill">Python</div>
+<div class="skill">Machine Learning</div>
+<div class="skill">Pandas</div>
+<div class="skill">NumPy</div>
+<div class="skill">Scikit-learn</div>
+<div class="skill">Matplotlib</div>
+<div class="skill">Seaborn</div>
+<div class="skill">Git</div>
+<div class="skill">Data Cleaning</div>
+<div class="skill">EDA</div>
+
+</div>
+
+</div>
+
+<!-- CURRENT LEARNING -->
+
+<div class="section">
+
+<h2>Currently Learning</h2>
+
+<div class="card">
+
+<ul>
+<li>Advanced Machine Learning Algorithms</li>
+<li>Deep Learning Fundamentals</li>
+<li>Model Optimization Techniques</li>
+<li>Data Visualization</li>
+<li>AI System Architecture</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- ACHIEVEMENTS -->
+
+<div class="section">
+
+<h2>Achievements</h2>
+
+<div class="card">
+
+<ul>
+<li>Built multiple machine learning projects from scratch</li>
+<li>Self-taught Python and Data Science</li>
+<li>Published ML projects on GitHub</li>
+<li>Continuously learning AI and ML technologies</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="section">
+
+<h2>Contact</h2>
+
+<div class="card">
+
+<ul>
+<li>Email: abhishek@email.com</li>
+<li>GitHub: github.com/abhishek-ml-arch</li>
+<li>LinkedIn: linkedin.com</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* neural background */
+
+const canvas=document.getElementById("bg")
+const ctx=canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let particles=[]
+
+for(let i=0;i<80;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+vx:(Math.random()-.5)*1,
+vy:(Math.random()-.5)*1
+})
+}
+
+let mouse={x:0,y:0}
+
+document.addEventListener("mousemove",e=>{
+mouse.x=e.clientX
+mouse.y=e.clientY
+})
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+particles.forEach(p=>{
+
+ctx.beginPath()
+ctx.arc(p.x,p.y,2,0,Math.PI*2)
+ctx.fillStyle="#38bdf8"
+ctx.fill()
+
+particles.forEach(p2=>{
+
+let dist=Math.hypot(p.x-p2.x,p.y-p2.y)
+
+if(dist<120){
+
+ctx.beginPath()
+ctx.moveTo(p.x,p.y)
+ctx.lineTo(p2.x,p2.y)
+ctx.strokeStyle="rgba(99,102,241,.2)"
+ctx.stroke()
+
+}
+
+})
+
+let mouseDist=Math.hypot(p.x-mouse.x,p.y-mouse.y)
+
+if(mouseDist<150){
+p.x+=(p.x-mouse.x)/20
+p.y+=(p.y-mouse.y)/20
+}
+
+p.x+=p.vx
+p.y+=p.vy
+
+if(p.x<0||p.x>canvas.width)p.vx*=-1
+if(p.y<0||p.y>canvas.height)p.vy*=-1
+
+})
+
+requestAnimationFrame(animate)
+
+}
+
+animate()
+
+/* 3D tilt for ALL cards */
+
+document.querySelectorAll(".card").forEach(card=>{
+
+card.addEventListener("mousemove",(e)=>{
+
+const rect=card.getBoundingClientRect()
+
+const x=e.clientX-rect.left
+const y=e.clientY-rect.top
+
+const rotateX=(y-rect.height/2)/12
+const rotateY=(rect.width/2-x)/12
+
+card.style.transform=`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+
+})
+
+card.addEventListener("mouseleave",()=>{
+card.style.transform="rotateX(0) rotateY(0)"
+})
+
+})
+
+/* hero tilt */
+
+const hero=document.getElementById("heroCard")
+
+document.addEventListener("mousemove",(e)=>{
+
+let x=(window.innerWidth/2-e.clientX)/30
+let y=(window.innerHeight/2-e.clientY)/30
+
+hero.style.transform=`rotateY(${x}deg) rotateX(${y}deg)`
+
+})
+
+</script>
+
+</body>
+</html>
